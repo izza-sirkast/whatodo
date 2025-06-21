@@ -69,7 +69,7 @@ router.post('/login', async (req: Request, res: Response) => {
             return;
         }
 
-        const accessToken = sign({ id: user.id, username: user.username, fromLogin: true}, process.env.ACC_SECRET, { expiresIn: '15m' });
+        const accessToken = sign({ id: user.id, username: user.username, fromLogin: true}, process.env.ACC_SECRET, { expiresIn: '4h' });
 
         const refreshToken = sign({ id: user.id, username: user.username}, process.env.REF_SECRET, { expiresIn: '1d' });
 
