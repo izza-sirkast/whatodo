@@ -14,3 +14,10 @@ const registerSchema = Joi.object({
 })
 
 export const validateRegister = validator(registerSchema);
+
+const postTodoSchema = Joi.object({
+    title: Joi.string().min(1).max(100).required(),
+    content: Joi.string().min(1).max(500).required()
+})
+
+export const validatePostTodo = validator(postTodoSchema);
